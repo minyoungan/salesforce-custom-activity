@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom Activity</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel='stylesheet' href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+        (function() {
+            var config = { baseUrl: 'js' };
+            var dependencies = [ 'customActivity' ];
+            require(config, dependencies);
+        })();
+    </script>
+</head>
+
+<body>
+
+    <div class="center">
+        <div id="step1" class="step">
+
+            <h2>Custom Activity</h2>
+            <form id="activityForm">
+                <div class="input-group">
+                    <label for="exampleField">Example Field:</label>
+                    <input type="text" id="exampleField" name="exampleField" placeholder="Enter a value" />
+                </div>
+            </form>
+        </div>
+        <div id="step2" class="step" style="display:none;">
+            <h2>Review & Save</h2>
+            <div id="reviewContent"></div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

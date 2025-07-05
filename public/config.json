@@ -1,0 +1,91 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png", 
+        "category": "Custom"
+    },
+
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Custom Activity",
+            "description": "A custom activity that connects SFMC to an external system.",
+            "step1Label": "Configure Activity",
+            "step2Label": "Review & Confirm"
+        }
+    },
+
+    "arguments": {
+        "execute": {
+            "inArguments": [
+                { 
+                    "JourneyId": "null",  
+                    "ActivityId": "null" 
+                }
+            ],
+            "outArguments": [],
+            "url": "ec2-3-15-240-159.us-east-2.compute.amazonaws.com/journeybuilder/execute",
+            "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json", 
+            "timeout": 100000,
+            "retryCount": 5,
+            "retryDelay": 10000,
+            "concurrentRequests": 1
+        }
+    },
+    
+    "configurationArguments": {
+        "applicationExtensionKey": "Custom Journey Activity",
+        "save": {
+            "url": "ec2-3-15-240-159.us-east-2.compute.amazonaws.com/journeybuilder/save",
+            "verb": "POST",
+            "useJwt": false 
+        },
+        "publish": {
+            "url": "ec2-3-15-240-159.us-east-2.compute.amazonaws.com/journeybuilder/publish",
+            "verb": "POST",
+            "useJwt": false 
+        },
+        "stop": {
+            "url": "ec2-3-15-240-159.us-east-2.compute.amazonaws.com/journeybuilder/stop",
+            "verb": "POST",
+            "useJwt": false
+        },
+        "validate": {
+            "url": "ec2-3-15-240-159.us-east-2.compute.amazonaws.com/journeybuilder/validate",
+            "verb": "POST",
+            "useJwt": false 
+        }
+    },
+
+    "wizardSteps": [
+        {
+            "label": "Configure Activity",
+            "key": "step1"
+        },
+        {
+            "label": "Review & Confirm",
+            "key": "step2"
+        }
+    ],
+
+    "userInterfaces": {
+        "configModal": {
+            "height": 700,
+            "width": 1000,
+            "fullscreen": false
+        }
+    },
+
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [],
+                "outArguments": []
+            }
+        }
+    }
+}
